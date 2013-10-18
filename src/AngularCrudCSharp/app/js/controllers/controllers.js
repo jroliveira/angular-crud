@@ -6,42 +6,52 @@ define([
 
     // Application Controller
     'controllers/AppController',
-    'controllers/HomeController',
-    'controllers/AccountController'
-], function (_, routes, appController, homeController, accountController) {
+    'controllers/home/IndexController',
+    'controllers/account/IndexController',
+    'controllers/account/SaveController'
+], function (
+    _,
+    routes,
+    appController,
+    homeController,
+    accountsController,
+    saveAccountController
+) {
     "use strict";
 
     var controllers = {
         home: homeController,
-        account: accountController
+        accounts: accountsController,
+        saveAccount: saveAccountController
     };
 
-    var setUpRoutes = function (angModule) {
-        angModule.config(function ($routeProvider) {
+    var setUpRoutes = function (angular) {
+        angular.config(function ($routeProvider) {
             _.each(routes, function (value, key) {
-                $routeProvider.when(
-                    value.route,
-                    {
+                $routeProvider.when(value.route, {
                         template: value.template,
                         controller: value.controller,
                         title: value.title
                     }
                 );
             });
+            
             $routeProvider.otherwise({ redirectTo: routes.home.route });
         });
-        
-        angModule.run(function ($rootScope) {
+
+        angular.run(function ($rootScope) {
             $rootScope.$on('$routeChangeSuccess');
         });
     };
 
-    var initialize = function (angModule) {
-        angModule.controller('AppController', appController);
-        _.each(controllers, function (controller, name) {
-            angModule.controller(name, controller);
+    var initialize = function (angular) {
+        angular.controller('AppController', appController);
+        
+        _.each(controllers, function (value, key) {
+            angular.controller(key, value);
         });
-        setUpRoutes(angModule);
+        
+        setUpRoutes(angular);
     };
 
     return {

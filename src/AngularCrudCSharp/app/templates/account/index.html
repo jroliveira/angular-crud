@@ -5,7 +5,7 @@
 </div>
 <h4><span class="text-info">angular crud csharp</span><small> contas</small></h4>
 <hr />
-<i class="icon-plus-sign"></i> Cadastrar <a id="create" class="btn btn-link" href="#">conta</a>
+<i class="icon-plus-sign"></i> Cadastrar <a id="create" class="btn btn-link" ng-href="#/conta/criar">conta</a>
 <hr />
 <div class="row">
     <div class="span12">
@@ -22,9 +22,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng:repeat="item in accounts">
-                        <td>{{item.name}}</td>
-                        <td>{{item.email}}</td>
+                    <tr ng-repeat="account in accounts">
+                        <td ng-bind="account.name"></td>
+                        <td ng-bind="account.email"></td>
                         <td>
                             <div class="btn-group pull-right">
                                 <a id="goEdit" class="btn btn-small btn-info" href="#">

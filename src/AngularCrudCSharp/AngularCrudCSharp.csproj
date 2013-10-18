@@ -90,11 +90,12 @@
     <Content Include="app\css\style.css" />
     <Content Include="app\index.html" />
     <Content Include="app\js\app.js" />
+    <Content Include="app\js\controllers\account\SaveController.js" />
     <Content Include="app\js\main.js" />
-    <Content Include="app\js\controllers\AccountController.js" />
+    <Content Include="app\js\controllers\account\IndexController.js" />
     <Content Include="app\js\controllers\AppController.js" />
     <Content Include="app\js\controllers\controllers.js" />
-    <Content Include="app\js\controllers\HomeController.js" />
+    <Content Include="app\js\controllers\home\IndexController.js" />
     <Content Include="app\js\directives\directives.js" />
     <Content Include="app\js\filters\filters.js" />
     <Content Include="app\js\libs\angular\angular-ie-compat.js" />
@@ -114,8 +115,9 @@
     <Content Include="app\js\services\AccountService.js" />
     <Content Include="app\js\services\services.js" />
     <Content Include="app\js\libs\require\text.js" />
-    <Content Include="app\templates\account.html" />
-    <Content Include="app\templates\home.html" />
+    <Content Include="app\templates\account\save.html" />
+    <Content Include="app\templates\account\index.html" />
+    <Content Include="app\templates\home\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
