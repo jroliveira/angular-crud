@@ -1,0 +1,43 @@
+<div class="alert undo-changes text-center">
+    <a id="undo" class="text-error" href="#">
+        <i class="icon-remove-sign"></i> Cancelar operação no servidor.
+    </a>
+</div>
+<h4><span class="text-info">angular crud csharp</span><small> contas</small></h4>
+<hr />
+<i class="icon-plus-sign"></i> Cadastrar <a id="create" class="btn btn-link" href="#">conta</a>
+<hr />
+<div class="row">
+    <div class="span12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Contas cadastradas
+            </div>  
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng:repeat="item in accounts">
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                        <td>
+                            <div class="btn-group pull-right">
+                                <a id="goEdit" class="btn btn-small btn-info" href="#">
+                                    <i class="icon-edit icon-white"></i>
+                                </a>
+                                <a id="destroy" class="btn btn-small btn-danger" href="#">
+                                    <i class="icon-minus-sign icon-white"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
