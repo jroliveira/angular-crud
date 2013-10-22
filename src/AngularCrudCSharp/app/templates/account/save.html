@@ -1,45 +1,45 @@
 <h4><span class="text-info">angular crud csharp</span><small> salvar conta</small></h4>
 <hr>
-<form ng-submit="save()" ng-controller="saveAccount">
+<form name="account" ng-submit="save()" ng-controller="saveAccount">
     <fieldset class="form-horizontal">
-        <div class="control-group">
+        <div class="control-group" ng-class="{error: account.name.$invalid}">
             <label for="name" class="control-label">Nome</label>
             <div class="controls">
                 <div class="input-prepend">
                     <span class="add-on"><i class="icon-user"></i></span>
                     <input type="text" name="name" ng-model="name" class="input-xlarge" required focus />
                 </div>
-                <span class="help-inline"></span>
+                <span class="help-inline" ng-class="{hide: !account.name.$invalid}">Campo obrigat&oacute;rio.</span>
             </div>
         </div>
-        <div class="control-group">
+        <div class="control-group" ng-class="{error: account.email.$invalid}">
             <label for="email" class="control-label">E-mail</label>
             <div class="controls">
                 <div class="input-prepend">
                     <span class="add-on"><i class="icon-envelope"></i></span>
                     <input type="text" name="email" ng-model="email" class="input-xlarge" required />
                 </div>
-                <span class="help-inline"></span>
+                <span class="help-inline" ng-class="{hide: !account.email.$invalid}">Campo obrigat&oacute;rio.</span>
             </div>
         </div>
-        <div class="control-group">
+        <div class="control-group" ng-class="{error: account.password.$invalid}">
             <label for="password" class="control-label">Senha</label>
             <div class="controls">
                 <div class="input-prepend">
                     <span class="add-on"><i class="icon-lock"></i></span>
                     <input type="password" name="password" ng-model="password" class="input-xlarge" required />
                 </div>
-                <span class="help-inline"></span>
+                <span class="help-inline" ng-class="{hide: !account.password.$invalid}">Campo obrigat&oacute;rio.</span>
             </div>
         </div>
-        <div class="control-group">
+        <div class="control-group" ng-class="{error: account.confirmPassword.$invalid}">
             <label for="confirmPassword" class="control-label">Confirmar senha</label>
             <div class="controls">
                 <div class="input-prepend">
                     <span class="add-on"><i class="icon-lock"></i></span>
                     <input type="password" name="confirmPassword" ng-model="confirmPassword" class="input-xlarge" required />
                 </div>
-                <span class="help-inline"></span>
+                <span class="help-inline" ng-class="{hide: !account.confirmPassword.$invalid}">Campo obrigat&oacute;rio.</span>
             </div>
         </div>
         <div class="form-actions">
