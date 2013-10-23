@@ -24,8 +24,8 @@ namespace AngularCrudCSharp.Modules.Api {
         public AccountsModule() {
             base.Get["api/accounts/"] = _ => Get();
             base.Get["api/accounts/{id}"] = _ => Get(_.id);
-            base.Put["api/accounts/"] = _ => Put(this.Bind());
-            base.Post["api/accounts/"] = _ => Post(this.Bind());
+            base.Put["api/accounts/"] = _ => Put(this.Bind<AccountModel>());
+            base.Post["api/accounts/"] = _ => Post(this.Bind<AccountModel>());
             base.Post["api/accounts/{id}"] = _ => Recover(_.id);
             base.Delete["api/accounts/{id}"] = _ => Delete(_.id);
         }
@@ -35,13 +35,13 @@ namespace AngularCrudCSharp.Modules.Api {
                            .Select(account => new { id = account.Id, name = account.Name, email = account.Email });
         }
 
-        private static dynamic Get(int id) {
+        private new static dynamic Get(int id) {
             return Accounts.Where(account => account.Id == id)
                            .Select(account => new { id = account.Id, name = account.Name, email = account.Email })
                            .FirstOrDefault();
         }
 
-        private static dynamic Put(AccountModel model) {
+        private new static dynamic Put(AccountModel model) {
             try {
                 var account = Accounts.FirstOrDefault(c => c.Id == model.id);
                 Accounts.Remove(account);
@@ -61,7 +61,7 @@ namespace AngularCrudCSharp.Modules.Api {
             }
         }
 
-        private static HttpStatusCode Post(AccountModel model) {
+        private new static HttpStatusCode Post(AccountModel model) {
             try {
                 if (model.id > 0) {
                     var account = Accounts.FirstOrDefault(c => c.Id == model.id);
@@ -106,7 +106,7 @@ namespace AngularCrudCSharp.Modules.Api {
             }
         }
 
-        private static HttpStatusCode Delete(int id) {
+        private new static HttpStatusCode Delete(int id) {
             try {
                 var account = Accounts.FirstOrDefault(c => c.Id == id);
                 Accounts.Remove(account);
