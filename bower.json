@@ -1,0 +1,14 @@
+{
+  "name": "angular-crud",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jroliveira/angular-crud",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {}
+}

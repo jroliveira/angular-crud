@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ng="http://angularjs.org/" ng:controller="AppController">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title ng:bind-template="{{title}} | angular crud">angular crud</title>
+
+  <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap/css/bootstrap-mvc-validation.css" rel="stylesheet" type="text/css" />
+  <link href="css/bootstrap/css/bootstrap-extensions.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a id="home" class="brand" href="#" title="angular crud"> angular crud</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li><a id="accounts" ng-href="#/contas"><i class="icon-user icon-white"></i> Contas</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <article>
+      <div class="container">
+        <h2 ng:bind-template="{{title}}">Loading...</h2>
+        <ng:view></ng:view>
+      </div>
+    </article>
+    <footer>
+      <div class="container">
+        <p class="pull-left">&copy; <a href="http://junioro.wordpress.com" rel="author">J&uacute;nior Oliveira</a> 2013.</p>
+        <p class="pull-right"> angular crud</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/libs/underscore/underscore-min.js"></script>
+  <script data-main="js/main" src="js/libs/require/require.js"></script>
+</body>
+
+</html>
