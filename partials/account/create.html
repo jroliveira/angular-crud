@@ -1,0 +1,60 @@
+<p class="md-title">angular crud <small class="md-caption">salvar conta</small>.</p>
+<div layout="column">
+  
+  <br>
+  
+  <form name="accountForm" ng-submit="vm.save(vm.account)">
+
+    <md-input-container class="md-icon-float">
+      <label>Nome</label>
+      <md-icon md-svg-src="img/ic_person_24px.svg" class="name"></md-icon>
+      <input name="name" ng-model="vm.account.name" type="text" required>
+      <div ng-messages="accountForm.name.$error">
+        <div ng-message="required">Campo obrigat&oacute;rio.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float">
+      <label>E-mail</label>
+      <md-icon md-svg-src="img/ic_email_24px.svg" class="email"></md-icon>
+      <input name="email" ng-model="vm.account.email" type="text" required>
+      <div ng-messages="accountForm.email.$error">
+        <div ng-message="required">Campo obrigat&oacute;rio.</div>
+      </div>
+    </md-input-container>
+
+    <div layout layout-sm="column">
+      <md-input-container class="md-icon-float" flex>
+        <label>Senha</label>
+        <md-icon md-svg-src="img/ic_lock_24px.svg" class="email"></md-icon>
+        <input name="password" ng-model="vm.account.password" type="password" required>
+        <div ng-messages="accountForm.password.$error">
+          <div ng-message="required">Campo obrigat&oacute;rio.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-icon-float" flex>
+        <label>Confirmar senha</label>
+        <md-icon md-svg-src="img/ic_lock_24px.svg" class="email"></md-icon>
+        <input name="confirmPassword" ng-model="vm.account.confirmPassword" type="password" required>
+        <div ng-messages="accountForm.confirmPassword.$error">
+          <div ng-message="required">Campo obrigat&oacute;rio.</div>
+        </div>
+      </md-input-container>
+    </div>
+
+    <br>
+
+    <div layout="row" layout-align="start center" style="height: 100px;">
+      <md-button aria-label="Add Account" href="#contas">
+        <md-icon md-svg-icon="img/ic_arrow_back_24px.svg"></md-icon> Voltar
+      </md-button>
+
+      <md-button class="md-raised md-primary" ng-click="vm.save(vm.account)">
+        <md-icon md-svg-icon="img/ic_check_circle_24px.svg"></md-icon> Enviar
+      </md-button>
+    </div>
+
+  </form>
+</div>
+</section>

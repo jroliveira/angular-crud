@@ -1,0 +1,12 @@
+.md-icon-float [ng-message] {
+  padding-left: 36px;
+}
+
+.panel,
+.panel > .md-toolbar-tools {
+  min-height: 48px;
+  max-height: 48px;
+  border-radius: 3px 3px 0 0;
+  background-color: rgb(16, 108, 200);
+  color: rgba(255, 255, 255, 0.87);
+}

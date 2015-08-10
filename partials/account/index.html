@@ -1,0 +1,32 @@
+<p class="md-title">angular crud <small class="md-caption">contas</small>.</p>
+
+<div layout="row" layout-align="start center">
+  <md-button aria-label="Add Account" href="#conta/criar">
+    <md-icon md-svg-icon="img/ic_person_add_24px.svg"></md-icon> Cadastrar conta.
+  </md-button>
+</div>
+
+<br>
+
+<section class="md-whiteframe-z1">
+  <md-toolbar class="md-primary md-default-theme panel">
+    <div class="md-toolbar-tools">
+      <h3>Contas cadastradas</h3>
+      <span flex=""></span>
+    </div>
+  </md-toolbar>
+
+  <md-list-item layout-padding class="md-2-line" ng-repeat="account in vm.accounts">
+    <md-icon md-svg-src="img/ic_person_48px.svg"></md-icon>
+    <div class="md-list-item-text">
+      <h3> {{ account.name }} </h3>
+      <p> {{ account.email }} </p>
+    </div>
+    <md-button class="md-icon-button md-primary" aria-label="Edit">
+      <md-icon md-svg-icon="img/ic_edit_24px.svg"></md-icon>
+    </md-button>
+    <md-button class="md-icon-button md-warn" aria-label="Delete">
+      <md-icon md-svg-icon="img/ic_delete_24px.svg"></md-icon>
+    </md-button>
+  </md-list-item>
+</section>

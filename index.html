@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:ng="http://angularjs.org/" ng:controller="AppController">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -8,56 +8,54 @@
   <meta name="author" content="" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title ng:bind-template="{{title}} | angular crud">angular crud</title>
+  <title>angular crud</title>
 
-  <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-  <link href="css/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
-  <link href="css/bootstrap/css/bootstrap-mvc-validation.css" rel="stylesheet" type="text/css" />
-  <link href="css/bootstrap/css/bootstrap-extensions.css" rel="stylesheet" type="text/css" />
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+  <link rel="stylesheet" href="vendor/css/angular-material.css" />
+  
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
-<body>
-  <div id="wrap">
-    <header>
-      <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <a id="home" class="brand" href="#" title="angular crud"> angular crud</a>
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-                <li class="divider-vertical"></li>
-                <li><a id="accounts" ng-href="#/contas"><i class="icon-user icon-white"></i> Contas</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<body ng-app="angularCrud" ng-controller="HomeController as ul">
+  <md-toolbar layout="row">
+    <div flex></div>
+    <div flex="55" style="position:relative;">
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">
+          <a href="#/"><span>angular crud</span></a>
+        </h2>
+        <md-button class="md-fab md-warn md-fab-top-right" aria-label="Add Account" href="#contas">
+          <md-icon md-svg-icon="img/ic_group_24px.svg"></md-icon>
+        </md-button>
       </div>
-    </header>
-    <article>
-      <div class="container">
-        <h2 ng:bind-template="{{title}}">Loading...</h2>
-        <ng:view></ng:view>
-      </div>
-    </article>
-    <footer>
-      <div class="container">
-        <p class="pull-left">&copy; <a href="http://junioro.wordpress.com" rel="author">J&uacute;nior Oliveira</a> 2013.</p>
-        <p class="pull-right"> angular crud</p>
-      </div>
-    </footer>
-  </div>
+    </div>
+    <div flex></div>
+  </md-toolbar>
 
-  <script src="js/libs/underscore/underscore-min.js"></script>
-  <script data-main="js/main" src="js/libs/require/require.js"></script>
+  <md-content layout-padding>
+    <div layout="row">
+      <div flex></div>
+      <div flex="55">
+        <ng-view></ng-view>
+      </div>
+      <div flex></div>
+    </div>
+  </md-content>
+
+  <script type="text/javascript" src="vendor/js/angular.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-route.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-resource.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-messages.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-animate.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-aria.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-material.js"></script>
+
+  <script type="text/javascript" src="app/app.js"></script>
+
+  <script type="text/javascript" src="app/services/AccountFactory.js"></script>
+
+  <script type="text/javascript" src="app/controllers/home/HomeController.js"></script>
+  <script type="text/javascript" src="app/controllers/account/ListController.js"></script>
+  <script type="text/javascript" src="app/controllers/account/CreateController.js"></script>
 </body>
 
 </html>
