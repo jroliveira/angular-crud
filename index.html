@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
   <title>angular crud</title>
 
   <link rel="stylesheet" href="vendor/css/angular-material.css" />
-  
+
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
@@ -35,6 +35,7 @@
     <div layout="row">
       <div flex></div>
       <div flex="55">
+        <div butterbar>carregando os dados...</div>
         <ng-view></ng-view>
       </div>
       <div flex></div>
@@ -51,11 +52,12 @@
 
   <script type="text/javascript" src="app/app.js"></script>
 
-  <script type="text/javascript" src="app/services/AccountFactory.js"></script>
+  <script type="text/javascript" src="app/services/account-factory.js"></script>
+  <script type="text/javascript" src="app/directives/butterbar.js"></script>
 
-  <script type="text/javascript" src="app/controllers/home/HomeController.js"></script>
-  <script type="text/javascript" src="app/controllers/account/ListController.js"></script>
-  <script type="text/javascript" src="app/controllers/account/CreateController.js"></script>
+  <script type="text/javascript" src="app/controllers/home/home.js"></script>
+  <script type="text/javascript" src="app/controllers/account/list.js"></script>
+  <script type="text/javascript" src="app/controllers/account/create.js"></script>
 </body>
 
 </html>

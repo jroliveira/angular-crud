@@ -10,3 +10,7 @@
   background-color: rgb(16, 108, 200);
   color: rgba(255, 255, 255, 0.87);
 }
+
+.hide {
+    display: none;
+}
