@@ -1,9 +1,8 @@
 <p class="md-title">angular crud <small class="md-caption">salvar conta</small>.</p>
 <div layout="column">
-  
   <br>
-  
-  <form name="accountForm">
+
+  <form name="accountForm" ng-submit="vm.save(vm.account)" novalidate>
 
     <md-input-container class="md-icon-float">
       <label>Nome</label>
@@ -17,9 +16,10 @@
     <md-input-container class="md-icon-float">
       <label>E-mail</label>
       <md-icon md-svg-src="img/ic_email_24px.svg" class="email"></md-icon>
-      <input name="email" ng-model="vm.account.email" type="text" required>
+      <input name="email" ng-model="vm.account.email" type="email" required>
       <div ng-messages="accountForm.email.$error">
         <div ng-message="required">Campo obrigat&oacute;rio.</div>
+        <div ng-message="email">E-mail inv&aacute;lido.</div>
       </div>
     </md-input-container>
 
@@ -36,9 +36,10 @@
       <md-input-container class="md-icon-float" flex>
         <label>Confirmar senha</label>
         <md-icon md-svg-src="img/ic_lock_24px.svg" class="email"></md-icon>
-        <input name="confirmPassword" ng-model="vm.account.confirmPassword" type="password" required>
+        <input name="confirmPassword" ng-model="vm.account.confirmPassword" type="password" match="vm.account.password" required>
         <div ng-messages="accountForm.confirmPassword.$error">
           <div ng-message="required">Campo obrigat&oacute;rio.</div>
+          <div ng-message="match">Senha n&atilde;o confere.</div>
         </div>
       </md-input-container>
     </div>
@@ -50,7 +51,7 @@
         <md-icon md-svg-icon="img/ic_arrow_back_24px.svg"></md-icon> Voltar
       </md-button>
 
-      <md-button class="md-raised md-primary" ng-click="vm.save(vm.account)">
+      <md-button class="md-raised md-primary" ng-disabled="accountForm.$invalid">
         <md-icon md-svg-icon="img/ic_check_circle_24px.svg"></md-icon> Enviar
       </md-button>
     </div>

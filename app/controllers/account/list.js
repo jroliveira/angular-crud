@@ -10,7 +10,6 @@
   function ListController(Account) {
     var vm = this;
     vm.accounts = Account.query();
-
     vm.delete = destroy;
 
     function destroy(account) {

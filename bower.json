@@ -15,7 +15,8 @@
     "angular-material": "^0.9.0",
     "angular-route": "~1.4.3",
     "angular-resource": "~1.4.3",
-    "angular-messages": "~1.4.3"
+    "angular-messages": "~1.4.3",
+    "angular-validation-match": "~1.6.0"
   },
   "devDependencies": {}
 }

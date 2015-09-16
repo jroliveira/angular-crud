@@ -6,7 +6,8 @@
       'ngMaterial',
       'ngRoute',
       'ngResource',
-      'ngMessages'
+      'ngMessages',
+      'validation.match'
     ])
     .config(config);
 
