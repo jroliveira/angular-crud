@@ -22,10 +22,10 @@
       <h3> {{ account.name }} </h3>
       <p> {{ account.email }} </p>
     </div>
-    <md-button class="md-icon-button md-primary" aria-label="Edit">
+    <md-button class="md-icon-button md-primary" aria-label="Edit" href="#conta/editar/{{ account.id }}">
       <md-icon md-svg-icon="img/ic_edit_24px.svg"></md-icon>
     </md-button>
-    <md-button class="md-icon-button md-warn" aria-label="Delete">
+    <md-button class="md-icon-button md-warn" aria-label="Delete" ng-click="vm.delete(account)">
       <md-icon md-svg-icon="img/ic_delete_24px.svg"></md-icon>
     </md-button>
   </md-list-item>

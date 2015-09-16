@@ -5,10 +5,23 @@
     .module('angularCrud')
     .controller('ListController', ListController);
 
-  ListController.$inject = ['AccountFactory'];
+  ListController.$inject = ['Account'];
 
-  function ListController(AccountFactory) {
+  function ListController(Account) {
     var vm = this;
-    vm.accounts = AccountFactory.query();
+    vm.accounts = Account.query();
+
+    vm.delete = destroy;
+
+    function destroy(account) {
+      Account
+        .delete({
+          id: account.id
+        })
+        .$promise
+        .then(function () {
+          vm.accounts = Account.query();
+        });
+    }
   }
 })();

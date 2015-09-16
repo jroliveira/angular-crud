@@ -5,9 +5,9 @@
     .module('angularCrud')
     .controller('CreateController', CreateController);
 
-  CreateController.$inject = ['AccountFactory', '$location'];
+  CreateController.$inject = ['Account', '$location'];
 
-  function CreateController(AccountFactory, $location) {
+  function CreateController(Account, $location) {
     var vm = this;
     vm.account = {
       name: '',
@@ -18,8 +18,8 @@
     vm.save = save;
 
     function save(account) {
-      AccountFactory
-        .create(account)
+      Account
+        .save(account)
         .$promise
         .then(function () {
           $location.path('/contas');

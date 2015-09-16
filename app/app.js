@@ -29,6 +29,11 @@
         controller: 'CreateController',
         controllerAs: 'vm'
       })
+      .when('/conta/editar/:id', {
+        templateUrl: 'partials/account/edit.html',
+        controller: 'EditController',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });

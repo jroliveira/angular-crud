@@ -3,18 +3,14 @@
 
   angular
     .module('angularCrud')
-    .factory('AccountFactory', AccountFactory);
+    .factory('Account', AccountFactory);
 
   AccountFactory.$inject = ['$resource'];
 
   function AccountFactory($resource) {
-    return $resource('http://nancy-api.apphb.com/accounts/', {}, {
-      query: {
-        method: 'GET',
-        isArray: true
-      },
-      create: {
-        method: 'POST'
+    return $resource('http://nancy-api.apphb.com/accounts/:id', {}, {
+      edit: {
+        method: 'PUT'
       }
     });
   }
