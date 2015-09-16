@@ -16,7 +16,8 @@
     "angular-route": "~1.4.3",
     "angular-resource": "~1.4.3",
     "angular-messages": "~1.4.3",
-    "angular-validation-match": "~1.6.0"
+    "angular-validation-match": "~1.6.0",
+    "angular-flash-messages": "~1.2.0"
   },
   "devDependencies": {}
 }

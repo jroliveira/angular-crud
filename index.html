@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="vendor/css/angular-material.css" />
 
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/flash-messages.css" />
 </head>
 
 <body ng-app="angularCrud" ng-controller="HomeController as ul">
@@ -35,6 +36,7 @@
     <div layout="row">
       <div flex></div>
       <div flex="55">
+        <flash:messages ng:show="messages"></flash:messages>
         <div butterbar>carregando os dados...</div>
         <ng-view></ng-view>
       </div>
@@ -50,6 +52,7 @@
   <script type="text/javascript" src="vendor/js/angular-aria.js"></script>
   <script type="text/javascript" src="vendor/js/angular-material.js"></script>
   <script type="text/javascript" src="vendor/js/angular-validation-match.js"></script>
+  <script type="text/javascript" src="vendor/js/angular-flash.js"></script>
 
   <script type="text/javascript" src="app/app.js"></script>
 

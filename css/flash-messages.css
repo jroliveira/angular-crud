@@ -1,0 +1,62 @@
+ol#flash-messages {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  width: 500px;
+  top: -16px;
+  left: 50%;
+  margin-left: -250px;
+  font-size: 12pt;
+}
+
+ol#flash-messages > li.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: solid 1px #d6e9c6;
+}
+
+ol#flash-messages > li.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border: solid 1px #ebccd1;
+}
+
+#flash-messages > li {
+  padding: 8px 8px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+ol {
+  list-style-type: none;
+}
+
+.slide-down {
+  display: none !important;
+}
+
+.slide-down.ng-hide-remove {
+  display: block !important;
+  animation: slide-down-enter 250ms ease-out, slide-down-leave 500ms 3s ease;
+}
+
+@keyframes slide-down-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-75%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(75%);
+  }
+}

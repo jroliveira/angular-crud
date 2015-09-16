@@ -7,7 +7,8 @@
       'ngRoute',
       'ngResource',
       'ngMessages',
-      'validation.match'
+      'validation.match',
+      'flash'
     ])
     .config(config);
 

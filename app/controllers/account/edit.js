@@ -5,9 +5,9 @@
     .module('angularCrud')
     .controller('EditController', EditController);
 
-  EditController.$inject = ['Account', '$location', '$routeParams'];
+  EditController.$inject = ['Account', '$location', '$routeParams', 'flash'];
 
-  function EditController(Account, $location, $routeParams) {
+  function EditController(Account, $location, $routeParams, flash) {
     var vm = this;
     vm.account = Account.get({
       id: $routeParams.id
@@ -18,9 +18,16 @@
       Account
         .edit(account)
         .$promise
-        .then(function () {
-          $location.path('/contas');
-        });
+        .then(success, error);
+
+      function success() {
+        $location.path('/contas');
+        flash('Conta salva com sucesso!');
+      }
+
+      function error() {
+        flash('error', 'Erro ao atualizar a conta!');
+      }
     }
   }
 })();

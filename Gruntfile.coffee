@@ -57,6 +57,11 @@ module.exports = (grunt) ->
           cwd: "bower_components/angular-validation-match/dist/"
           src: "angular-validation-match.js"
           dest: "vendor/js/"
+        }, {
+          expand: true
+          cwd: "bower_components/angular-flash-messages/"
+          src: "angular-flash.js"
+          dest: "vendor/js/"
         }]
         
     exec:
